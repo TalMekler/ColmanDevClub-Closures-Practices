@@ -7,12 +7,6 @@ const body = document.querySelector("body");
 
 let popupRemove; // function
 
-document.querySelectorAll(".close-popup").forEach(popupCloser => {
-  popupCloser.addEventListener("click", ()=> {
-    popupRemove();
-  })
-});
-
 btn.addEventListener("click", () => {
   popupRemove = popupCreator(usernameInput.value, emailInput.value, ageInput.value);
 });
@@ -60,8 +54,8 @@ const popupCreator = (username, email, age) => {
   body.appendChild(blackBG);
 
   const removePopup = () => {
-    body.removeChild(document.querySelector(".popup-bg"));
-    body.removeChild(document.querySelector("#popup"));
+    body.removeChild(blackBG);
+    body.removeChild(popupDiv);
   }
 
   return removePopup;
