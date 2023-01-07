@@ -5,11 +5,7 @@ const ageInput = document.querySelector("#age-input");
 const img = document.querySelector("img");
 const body = document.querySelector("body");
 
-let popupRemove;
-
-// btn.addEventListener("click", () => {
-//   popupRemove = popupCreator(usernameInput.value, emailInput.value, ageInput.value);
-// });
+let popupRemove; // function
 
 document.querySelectorAll(".close-popup").forEach(popupCloser => {
   popupCloser.addEventListener("click", ()=> {
@@ -30,7 +26,6 @@ const popupCreator = (username, email, age) => {
   const xIcon = document.createElement("i");
   xIcon.classList.add("fa-regular");
   xIcon.classList.add("fa-circle-xmark");
-  // xIcon.classList.add("close-popup");
   xIcon.setAttribute("onclick", "popupRemove()");
 
   const popupDiv = document.createElement("div");
@@ -60,7 +55,6 @@ const popupCreator = (username, email, age) => {
   body.classList.add("popup-shown");
   const blackBG = document.createElement("div");
   blackBG.classList.add("popup-bg");
-  // blackBG.classList.add("close-popup");
   blackBG.setAttribute("onclick", "popupRemove(this)");
 
   body.appendChild(blackBG);
